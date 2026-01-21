@@ -3,7 +3,7 @@ Petpooja Sales Data Integration (Python + SQLite)
 This project fetches sales data from the Petpooja API and stores it in a SQLite database using Python.
 
 
-
+Install the necessary libraries
 Libraries used:
 requests
 sqlite3
@@ -14,8 +14,8 @@ Project Structure:
 petpooja/
 │
 ├── fetch_sales_data.py   # Main Python script
-├── sales_data.db         # SQLite database (auto-created)
-├── .env                  # Environment variables (API keys)
+├── sales_data.db         # SQLite database 
+├── .env                  # Environment variables 
 ├── README.md             # Project documentation
 
 

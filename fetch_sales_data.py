@@ -42,7 +42,7 @@ print("Connected to SQLite database")
 cursor.execute(
     "CREATE TABLE IF NOT EXISTS sales_data ("
     "id INTEGER PRIMARY KEY AUTOINCREMENT, "
-    "receipt_number TEXT, "
+    "receipt_number TEXT UNIQUE, "
     "sale_date TEXT, "
     "transaction_time TEXT, "
     "sale_amount REAL, "
@@ -91,7 +91,7 @@ def insert_sales_data(records):
         return
 
     query = (
-        "INSERT INTO sales_data (receipt_number, sale_date, transaction_time, "
+        "INSERT OR IGNORE INTO sales_data (receipt_number, sale_date, transaction_time, "
         "sale_amount, tax_amount, discount_amount, round_off, net_sale, "
         "payment_mode, order_type, transaction_status) "
         "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
